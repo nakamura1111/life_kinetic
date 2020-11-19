@@ -5,6 +5,7 @@ import random
 
 from figure import *
 from fruit import *
+from user_guide import *
 
 KIND_GENRE = 2
 
@@ -14,24 +15,29 @@ def main():
   screen = pygame.display.set_mode((800,600))
   pygame.display.set_caption("Life Kinetic")
 
+  flame = 0
   mode = 0
   figure = Figure(screen)
   fruit = Fruit()
+  user_guide = UserGuide()
 
   while(True):
-    # 背景色の設定（空色）
-    screen.fill( (0, 0, 0) )
-    # モード選択の文字入力
+    if flame == 0:
+      # 背景色の設定（空色）
+      screen.fill( (0, 0, 0) )
+      # 物体の表示
+      num_for_display_genre = random.randint(0, KIND_GENRE-1)
+      if mode == 0:
+        figure.draw(screen)
+      else:
+        fruit.draw(screen)
+      
+      # モード選択の文字入力
+      user_guide.draw(screen)
+      pygame.display.update()
 
-    # 
-    num_for_display_genre = random.randint(0, KIND_GENRE-1)
-    if mode == 0:
-      figure.draw(screen)
-    else:
-      fruit.draw(screen)
-
-    pygame.display.update()
-    pygame.time.wait(5000)
+    flame = (flame + 1) % 100
+    pygame.time.wait(50)
 
     for event in pygame.event.get():
       # 終了処理
