@@ -8,5 +8,5 @@ class UserGuide():
 
   def draw(self, screen):
     # 操作概要
-    text = self.font.render("[a] : display figure,  [s] : display fruit, esc : exit", True, (255, 255, 255))
+    text = self.font.render("[a] : display figure,  [s] : display fruit, [d] : display number, [esc] : exit", True, (255, 255, 255))
     screen.blit(text, (10, 550))

@@ -5,6 +5,7 @@ import random
 
 from figure import *
 from fruit import *
+from number import *
 from user_guide import *
 
 KIND_GENRE = 2
@@ -19,6 +20,7 @@ def main():
   mode = 0
   figure = Figure(screen)
   fruit = Fruit()
+  number = Number()
   user_guide = UserGuide()
 
   while(True):
@@ -29,8 +31,10 @@ def main():
       num_for_display_genre = random.randint(0, KIND_GENRE-1)
       if mode == 0:
         figure.draw(screen)
-      else:
+      elif mode == 1:
         fruit.draw(screen)
+      else:
+        number.draw(screen)
       
       # モード選択の文字入力
       user_guide.draw(screen)
@@ -51,6 +55,9 @@ def main():
         # 果物モード
         if event.key == K_s:
           mode = 1
+        # 数字モード
+        if event.key == K_d:
+          mode = 2
         # 終了処理
         if event.key == K_ESCAPE:
           pygame.quit()
