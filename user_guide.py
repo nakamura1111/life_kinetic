@@ -9,4 +9,7 @@ class UserGuide():
   def draw(self, screen):
     # 操作概要
     text = self.font.render("[a] : display figure,  [s] : display fruit, [d] : display number, [esc] : exit", True, (255, 255, 255))
-    screen.blit(text, (10, 550))
+    screen.blit(text, (10, 540))
+    # 表示数変更
+    text = self.font.render("[1] - [5] : modify the number of display", True, (255, 255, 255))
+    screen.blit(text, (10, 570))
