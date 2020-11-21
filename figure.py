@@ -18,9 +18,9 @@ class Figure():
   
   # 図形を描画する
   def draw(self, screen, n_display):
-    self.surface.fill( (0, 0, 0) )
     # print(placement_data[n_display])
     for rect_figure in placement_data[n_display]:
+      self.surface.fill( (0, 0, 0) )
       if rect_figure == None:
         continue
       # print(rect_figure)

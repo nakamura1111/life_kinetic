@@ -62,6 +62,17 @@ def main():
         # 数字モード
         if event.key == K_d:
           mode = 2
+        # 物体表示数変更
+        if event.key == K_1:
+          n_display = 1
+        if event.key == K_2:
+          n_display = 2
+        if event.key == K_3:
+          n_display = 3
+        # if event.key == K_4:
+        #   n_display = 4
+        # if event.key == K_5:
+        #   n_display = 5
         # 終了処理
         if event.key == K_ESCAPE:
           pygame.quit()
