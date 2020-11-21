@@ -18,6 +18,7 @@ def main():
 
   flame = 0
   mode = 0
+  n_display = 1
   figure = Figure(screen)
   fruit = Fruit()
   number = Number()
@@ -27,14 +28,17 @@ def main():
     if flame == 0:
       # 背景色の設定（空色）
       screen.fill( (0, 0, 0) )
+      # # 表示数の設定
+      # placement.set(n_display)
       # 物体の表示
       num_for_display_genre = random.randint(0, KIND_GENRE-1)
+      # print(placement.rects)
       if mode == 0:
-        figure.draw(screen)
+        figure.draw(screen, n_display)
       elif mode == 1:
-        fruit.draw(screen)
+        fruit.draw(screen, n_display)
       else:
-        number.draw(screen)
+        number.draw(screen, n_display)
       
       # モード選択の文字入力
       user_guide.draw(screen)
